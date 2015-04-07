@@ -1,6 +1,6 @@
-## Proyecto Teatro
+# Proyecto Teatro
 
-Autores
+## Autores
 =======
 
 * Carlos Eduardo Beltrán Saavedra (carlosbeltrane@gmail.com)

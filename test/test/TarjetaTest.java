@@ -20,9 +20,14 @@ public class TarjetaTest extends TestCase {
     //---------------------------------------------------------------
     
     /**
-     * Es la clase de donde se harán las pruebas
+     * Teatro para obtener el saldo inicial
+     * y el saldo de recarga
      */
     private Teatro teatro;
+    
+    /**
+     * Es la clase de donde se harán las pruebas
+     */
     private Tarjeta tarjeta;
     
     //---------------------------------------------------------------
@@ -45,7 +50,8 @@ public class TarjetaTest extends TestCase {
     public void testCargaInicial( )
     {
         setupEscenario1();
-        assertEquals("El saldo inicial es inválido", Teatro.SALDO_INICIAL, tarjeta.getSaldo());
+        double saldo = Teatro.SALDO_INICIAL;
+        assertEquals("El saldo inicial es inválido", saldo, tarjeta.getSaldo());
     }
     
     /**

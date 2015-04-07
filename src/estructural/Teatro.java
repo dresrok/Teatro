@@ -178,7 +178,7 @@ public class Teatro {
             calcularTotal(sillas)));
     }
     
-    private double calcularTotal(ArrayList<Silla> sillas){
+    public double calcularTotal(ArrayList<Silla> sillas){
         double total = 0.0;
         for (Silla silla : sillas) {
             switch(silla.getTipo()) {

@@ -17,6 +17,8 @@ import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 
@@ -397,12 +399,20 @@ public class InterfazRegistrarVenta extends javax.swing.JFrame {
             }
             
             if(ckReserva.isSelected()){
-                teatro.registrarVenta(teatro.getReserva(Integer.parseInt(cbReservas.getSelectedItem().toString())), 
-                    tarjeta, tipo);
+                try {
+                    teatro.registrarVenta(teatro.getReserva(Integer.parseInt(cbReservas.getSelectedItem().toString())),
+                            tarjeta, tipo);
+                } catch (Exception ex) {
+                    Logger.getLogger(InterfazRegistrarVenta.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }else{
                 teatro.crearReserva(teatro.getFuncion(Integer.parseInt(cbFunciones.getSelectedItem().toString())), null, sillas);
-                teatro.registrarVenta(teatro.getReserva(teatro.getReservas().size()), tarjeta, tipo);
-                //teatro.getReserva(teatro.getReservas().size()).setEstado(2);
+                try {
+                    teatro.registrarVenta(teatro.getReserva(teatro.getReservas().size()), tarjeta, tipo);
+                    //teatro.getReserva(teatro.getReservas().size()).setEstado(2);
+                } catch (Exception ex) {
+                    Logger.getLogger(InterfazRegistrarVenta.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             JOptionPane.showMessageDialog(this, "Venta registrada exitosamente", "Venta Registrada", JOptionPane.INFORMATION_MESSAGE);
             dibujarSillas(teatro.getFuncion(Integer.parseInt(cbFunciones.getSelectedItem().toString())), null);
