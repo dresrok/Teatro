@@ -36,7 +36,7 @@ public class Teatro {
         this.salas = new ArrayList<>();
         this.tarjetas = new ArrayList<>();
         this.reservas = new ArrayList<>();
-        cargarDefecto();
+        //cargarDefecto();
     }
     
     public int getCodigoPelicula(){
