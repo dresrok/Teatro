@@ -51,7 +51,11 @@ public class Tarjeta {
         this.saldo += saldo;
     }
     
-    public void actualizarSaldo(double saldo){
+    public void actualizarSaldo(double saldo) throws Exception{
+        if(saldo > this.saldo)
+        {
+            throw new Exception("Saldo insuficiente");
+        }
         this.saldo -= saldo;
     }
     
