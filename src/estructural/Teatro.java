@@ -200,7 +200,7 @@ public class Teatro {
         }
     }
     
-    public void registrarVenta(Reserva reserva, Tarjeta tarjeta, int tipo) throws Exception{
+    public void registrarVenta(Reserva reserva, Tarjeta tarjeta, int tipo){
         if(tarjeta != null){
             reserva.setTotal(reserva.getTotal() * (1-DESCUENTO));
         }
